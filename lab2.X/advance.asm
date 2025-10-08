@@ -1,0 +1,72 @@
+List p=18f4520
+    #include<p18f4520.inc>
+    CONFIG OSC = INTIO67
+    CONFIG WDT = OFF
+    org 0x00
+    setup:
+	; seq A
+	LFSR 0, 0x200
+	MOVLW 0x0D
+	MOVWF POSTINC0
+	MOVLW 0x27
+	MOVWF POSTINC0
+	MOVLW 0x4B
+	MOVWF POSTINC0
+	MOVLW 0x7E
+	MOVWF POSTINC0
+	MOVLW 0xB2
+	MOVWF POSTINC0
+	MOVLW 0xE8
+	MOVWF POSTINC0
+	LFSR 0, 0x200
+	
+	; seq B
+	LFSR 1, 0x210
+	MOVLW 0x05
+	MOVWF POSTINC1
+	MOVLW 0x39
+	MOVWF POSTINC1
+	MOVLW 0x6C
+	MOVWF POSTINC1
+	MOVLW 0xA1
+	MOVWF POSTINC1
+	MOVLW 0xF3
+	MOVWF POSTINC1
+	LFSR 1, 0x210
+	
+	LFSR 2, 0x220
+	
+	; [0x00] set Iteration variables as 11
+	MOVLW 0x0B
+	MOVWF 0x00
+	MOVLW 0x06
+	MOVWF 0x01
+	MOVLW 0x05
+	MOVWF 0x02
+    main:
+	loop:
+	MOVF INDF1, W
+	CPFSGT INDF0
+	    GOTO check_A
+	GOTO check_B
+	check_A:
+	    TSTFSZ 0x01
+		GOTO take_A
+	    GOTO take_B
+	check_B:
+	    TSTFSZ 0x02
+		GOTO take_B
+	    GOTO take_A
+	take_A:
+	    MOVF POSTINC0, W
+	    DECF 0x01
+	    GOTO done_loop
+	take_B:
+	    MOVF POSTINC1, W
+	    DECF 0x02
+	done_loop:
+	    MOVWF POSTINC2
+	    DECF 0x00 ;[0x00]--
+	    TSTFSZ 0x00
+		GOTO loop
+    end

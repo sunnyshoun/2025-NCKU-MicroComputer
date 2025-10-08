@@ -1,0 +1,6 @@
+Warning[205] C:\MYCODE\MICROCOMPUTER\LAB3.X\HARD.ASM 1 : Found directive in column 1. (List)
+Warning[207] C:\MYCODE\MICROCOMPUTER\LAB3.X\HARD.ASM 7 : Found label after column 1. (setup)
+Warning[207] C:\MYCODE\MICROCOMPUTER\LAB3.X\HARD.ASM 15 : Found label after column 1. (main)
+Warning[207] C:\MYCODE\MICROCOMPUTER\LAB3.X\HARD.ASM 19 : Found label after column 1. (loop)
+Warning[207] C:\MYCODE\MICROCOMPUTER\LAB3.X\HARD.ASM 25 : Found label after column 1. (add)
+Warning[207] C:\MYCODE\MICROCOMPUTER\LAB3.X\HARD.ASM 29 : Found label after column 1. (skip)

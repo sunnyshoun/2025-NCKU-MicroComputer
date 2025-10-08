@@ -1,0 +1,64 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Thu Sep 25 11:36:06 2025
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000134
+                   .cinit    romdata   0x000134    program   0x000002
+.config_300001_BUILD/DEFAULT/DEBUG/HARD.O    romdata   0x300001    program   0x000001
+.config_300003_BUILD/DEFAULT/DEBUG/HARD.O    romdata   0x300003    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000135      
+                            0x300001    0x300001      
+                            0x300003    0x300003      
+            312 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              bubble_swap   0x000060    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+      do_loop_find_pair_i   0x00009e    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+         done_bubble_swap   0x000050    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+              done_loop_j   0x00003c    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+               find_pairs   0x000070    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+          init_fail_array   0x000108    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+          init_flag_array   0x000084    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+                loop_copy   0x000128    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+         loop_find_pair_i   0x000092    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+         loop_find_pair_j   0x0000ba    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+                   loop_i   0x00002c    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+                   loop_j   0x000048    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+                     main   0x00002c    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+                pair_done   0x000100    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+                    setup   0x000000    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    setup   0x000000    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+                   loop_i   0x00002c    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+                     main   0x00002c    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+              done_loop_j   0x00003c    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+                   loop_j   0x000048    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+         done_bubble_swap   0x000050    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+              bubble_swap   0x000060    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+               find_pairs   0x000070    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+          init_flag_array   0x000084    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+         loop_find_pair_i   0x000092    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+      do_loop_find_pair_i   0x00009e    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+         loop_find_pair_j   0x0000ba    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+                pair_done   0x000100    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+          init_fail_array   0x000108    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+                loop_copy   0x000128    program     static C:\Users\PC10\MPLABXProjects\lab2.X\hard.asm
+
+

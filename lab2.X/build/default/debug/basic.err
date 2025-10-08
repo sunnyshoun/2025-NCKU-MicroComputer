@@ -1,0 +1,5 @@
+Warning[205] C:\USERS\PC10\MPLABXPROJECTS\LAB2.X\BASIC.ASM 1 : Found directive in column 1. (List)
+Warning[207] C:\USERS\PC10\MPLABXPROJECTS\LAB2.X\BASIC.ASM 19 : Found label after column 1. (loop)
+Warning[207] C:\USERS\PC10\MPLABXPROJECTS\LAB2.X\BASIC.ASM 23 : Found label after column 1. (even)
+Warning[207] C:\USERS\PC10\MPLABXPROJECTS\LAB2.X\BASIC.ASM 26 : Found label after column 1. (odd)
+Warning[207] C:\USERS\PC10\MPLABXPROJECTS\LAB2.X\BASIC.ASM 28 : Found label after column 1. (done_loop)

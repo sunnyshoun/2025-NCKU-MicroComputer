@@ -1,0 +1,6 @@
+Warning[205] C:\MYCODE\MICROCOMPUTER\LAB4.X\ADVANCE.ASM 1 : Found directive in column 1. (List)
+Warning[207] C:\MYCODE\MICROCOMPUTER\LAB4.X\ADVANCE.ASM 9 : Found label after column 1. (division)
+Warning[207] C:\MYCODE\MICROCOMPUTER\LAB4.X\ADVANCE.ASM 21 : Found label after column 1. (division_loop)
+Warning[207] C:\MYCODE\MICROCOMPUTER\LAB4.X\ADVANCE.ASM 38 : Found label after column 1. (do_subtract)
+Warning[207] C:\MYCODE\MICROCOMPUTER\LAB4.X\ADVANCE.ASM 47 : Found label after column 1. (next_bit)
+Warning[207] C:\MYCODE\MICROCOMPUTER\LAB4.X\ADVANCE.ASM 56 : Found label after column 1. (main)
