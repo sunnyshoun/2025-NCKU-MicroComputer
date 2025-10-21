@@ -1,2 +1,3 @@
 Warning[205] C:\MYCODE\MICROCOMPUTER\LAB4.X\BASIC.ASM 1 : Found directive in column 1. (List)
-Warning[207] C:\MYCODE\MICROCOMPUTER\LAB4.X\BASIC.ASM 6 : Found label after column 1. (And_Mul)
+Warning[207] C:\MYCODE\MICROCOMPUTER\LAB4.X\BASIC.ASM 7 : Found label after column 1. (And_Mul)
+Warning[207] C:\MYCODE\MICROCOMPUTER\LAB4.X\BASIC.ASM 30 : Found label after column 1. (main)

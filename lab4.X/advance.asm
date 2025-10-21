@@ -55,17 +55,17 @@ List p=18f4520
 
     main:
         ; Dividend
-        MOVLW 0xFE
+        MOVLW 0x55
         MOVWF 0x00
 
-        MOVLW 0x01
+        MOVLW 0x55
         MOVWF 0x01
 
         ; Divisor
-        MOVLW 0x02
+        MOVLW 0x55
         MOVWF 0x02
 
-        MOVLW 0xCA
+        MOVLW 0x55
         MOVWF 0x03
 
         RCALL division

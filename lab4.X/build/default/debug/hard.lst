@@ -1,4 +1,4 @@
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE  1
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ Warning[207]: Found label after column 1. (division_loop)
 Warning[207]: Found label after column 1. (do_subtract)
 000028                00038     do_subtract:
 000028 5003           00039         MOVF 0x03, W
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE  2
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -82,68 +82,68 @@ Warning[207]: Found label after column 1. (next_bit)
                       00055     
 Warning[207]: Found label after column 1. (newtonSqrt)
 000042                00056     newtonSqrt:
-000042 C020 F000      00057         MOVFF 0x20, 0x00
-000046 C021 F001      00058         MOVFF 0x21, 0x01
-00004A C022 F002      00059         MOVFF 0x22, 0x02
-00004E C023 F003      00060         MOVFF 0x23, 0x03
-000052 D???           00061         RCALL division
-                      00062         
-000054 5023           00063         MOVF 0x23, W
-000056 2611           00064         ADDWF 0x11, F
-000058 5022           00065         MOVF 0x22, W
-00005A 2210           00066         ADDWFC 0x10, F
-                      00067         
-                      00068         ; /2
-00005C C010 F000      00069         MOVFF 0x10, 0x00
-000060 C011 F001      00070         MOVFF 0x11, 0x01
-000064 6A02           00071         CLRF 0x02
-000066 0E02           00072         MOVLW 0x02
-000068 6E03           00073         MOVWF 0x03
-00006A D???           00074         RCALL division
-                      00075 
-00006C 5022           00076         MOVF 0x22, W
-00006E 5C10           00077         SUBWF 0x10, W
-000070 E1??           00078         BNZ newton_continue
+                      00057         ; (N / x_n) -> [0x10:0x11]
+000042 C020 F000      00058         MOVFF 0x20, 0x00
+000046 C021 F001      00059         MOVFF 0x21, 0x01
+00004A C022 F002      00060         MOVFF 0x22, 0x02
+00004E C023 F003      00061         MOVFF 0x23, 0x03
+000052 D???           00062         RCALL division
+                      00063         
+                      00064         ; [0x10:0x11] += x_n
+000054 5023           00065         MOVF 0x23, W
+000056 2611           00066         ADDWF 0x11, F
+000058 5022           00067         MOVF 0x22, W
+00005A 2210           00068         ADDWFC 0x10, F
+                      00069         
+                      00070         ; ([0x10:0x11]) /= 2
+00005C 90D8           00071         BCF STATUS, C
+00005E 3210           00072         RRCF 0x10, F
+000060 3211           00073         RRCF 0x11, F
+                      00074 
+                      00075         ; if |x_n - x_(n+1)| == 0, done
+000062 5022           00076         MOVF 0x22, W
+000064 5C10           00077         SUBWF 0x10, W
+000066 E1??           00078         BNZ newton_continue
                       00079         
-000072 5023           00080         MOVF 0x23, W
-000074 5C11           00081         SUBWF 0x11, W
-000076 E0??           00082         BZ newton_done
+000068 5023           00080         MOVF 0x23, W
+00006A 5C11           00081         SUBWF 0x11, W
+00006C E0??           00082         BZ newton_done
                       00083         
 Warning[207]: Found label after column 1. (newton_continue)
-000078                00084     newton_continue:
-000078 C010 F022      00085         MOVFF 0x10, 0x22
-00007C C011 F023      00086         MOVFF 0x11, 0x23
+00006E                00084     newton_continue:
+00006E C010 F022      00085         MOVFF 0x10, 0x22
+000072 C011 F023      00086         MOVFF 0x11, 0x23
                       00087         
-000080 EF?? F???      00088         GOTO newtonSqrt
+000076 EF?? F???      00088         GOTO newtonSqrt
                       00089         
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE  3
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
 Warning[207]: Found label after column 1. (newton_done)
-000084                00090     newton_done:
-000084 C010 F024      00091         MOVFF 0x10, 0x24
-000088 C011 F025      00092         MOVFF 0x11, 0x25
+00007A                00090     newton_done:
+00007A C010 F024      00091         MOVFF 0x10, 0x24
+00007E C011 F025      00092         MOVFF 0x11, 0x25
                       00093         
-00008C 0012           00094         RETURN
+000082 0012           00094         RETURN
                       00095 
 Warning[207]: Found label after column 1. (main)
-00008E                00096     main:
-00008E 0EFE           00097         MOVLW 0xFE
-000090 6E20           00098         MOVWF 0x20
-000092 0E01           00099         MOVLW 0x01
-000094 6E21           00100         MOVWF 0x21
-000096 0E55           00101         MOVLW 0x55
-000098 6E22           00102         MOVWF 0x22
-00009A 0E66           00103         MOVLW 0x66
-00009C 6E23           00104         MOVWF 0x23
+000084                00096     main:
+000084 0E9A           00097         MOVLW 0x9A
+000086 6E20           00098         MOVWF 0x20
+000088 0EB1           00099         MOVLW 0xB1
+00008A 6E21           00100         MOVWF 0x21
+00008C 0EFF           00101         MOVLW 0xFF
+00008E 6E22           00102         MOVWF 0x22
+000090 0EFF           00103         MOVLW 0xFF
+000092 6E23           00104         MOVWF 0x23
                       00105         
-00009E D???           00106         RCALL newtonSqrt
+000094 D???           00106         RCALL newtonSqrt
                       00107 
                       00108     end
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE  4
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE  4
 
 
 SYMBOL TABLE
@@ -202,7 +202,7 @@ BCLIP                             00000003
 BF                                00000000
 BGST                              00000005
 BOR                               00000000
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE  5
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE  5
 
 
 SYMBOL TABLE
@@ -261,7 +261,7 @@ CLKO                              00000006
 CM0                               00000000
 CM1                               00000001
 CM2                               00000002
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE  6
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE  6
 
 
 SYMBOL TABLE
@@ -320,7 +320,7 @@ FLTS                              00000002
 FREE                              00000004
 FSR0                              00000000
 FSR0H                             00000FEA
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE  7
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE  7
 
 
 SYMBOL TABLE
@@ -379,7 +379,7 @@ INT2P                             00000007
 INTCON                            00000FF2
 INTCON2                           00000FF1
 INTCON3                           00000FF0
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE  8
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE  8
 
 
 SYMBOL TABLE
@@ -438,7 +438,7 @@ LATD4                             00000004
 LATD5                             00000005
 LATD6                             00000006
 LATD7                             00000007
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE  9
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE  9
 
 
 SYMBOL TABLE
@@ -497,7 +497,7 @@ P                                 00000004
 P1A                               00000002
 P1B                               00000005
 P1C                               00000006
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE 10
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE 10
 
 
 SYMBOL TABLE
@@ -556,7 +556,7 @@ PROD                              00000FF3
 PRODH                             00000FF4
 PRODL                             00000FF3
 PRSEN                             00000007
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE 11
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE 11
 
 
 SYMBOL TABLE
@@ -615,7 +615,7 @@ RCIE                              00000005
 RCIF                              00000005
 RCIP                              00000005
 RCMT                              00000006
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE 12
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE 12
 
 
 SYMBOL TABLE
@@ -674,7 +674,7 @@ SSPBUF                            00000FC9
 SSPCON1                           00000FC6
 SSPCON2                           00000FC5
 SSPEN                             00000005
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE 13
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE 13
 
 
 SYMBOL TABLE
@@ -733,7 +733,7 @@ T3CKPS1                           00000005
 T3CON                             00000FB1
 T3SYNC                            00000002
 TABLAT                            00000FF5
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE 14
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE 14
 
 
 SYMBOL TABLE
@@ -792,7 +792,7 @@ TRISA7                            00000007
 TRISB                             00000F93
 TRISB0                            00000000
 TRISB1                            00000001
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE 15
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE 15
 
 
 SYMBOL TABLE
@@ -851,7 +851,7 @@ VREFN                             00000002
 VREFP                             00000003
 W                                 00000000
 WCOL                              00000007
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE 16
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE 16
 
 
 SYMBOL TABLE
@@ -910,7 +910,7 @@ _EBTR2_ON_7L                      000000FB
 _EBTR3_OFF_7L                     000000FF
 _EBTR3_ON_7L                      000000F7
 _EBTRB_OFF_7H                     000000FF
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE 17
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE 17
 
 
 SYMBOL TABLE
@@ -969,7 +969,7 @@ _WDTPS_8192_2H                    000000FB
 _WDTPS_8_2H                       000000E7
 _WDT_OFF_2H                       000000FE
 _WDT_ON_2H                        000000FF
-MPASM 5.84                          HARD.ASM   10-9-2025  5:15:52         PAGE 18
+MPASM 5.84                          HARD.ASM   10-9-2025  11:34:46         PAGE 18
 
 
 SYMBOL TABLE
@@ -997,10 +997,10 @@ __MPLAB_DEBUGGER_SIMULATOR        1
 division                          00000004
 division_loop                     00000010
 do_subtract                       00000028
-main                              0000008E
+main                              00000084
 newtonSqrt                        00000042
-newton_continue                   00000078
-newton_done                       00000084
+newton_continue                   0000006E
+newton_done                       0000007A
 next_bit                          00000032
 
 Errors   :     0

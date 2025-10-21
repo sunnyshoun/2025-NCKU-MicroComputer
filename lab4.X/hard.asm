@@ -19,7 +19,7 @@ List p=18f4520
         MOVWF 0x14
         
     division_loop:
-        BCF STATUS, C
+        BCF STATUS, 0
         RLCF 0x01, F
         RLCF 0x00, F
         
@@ -68,7 +68,7 @@ List p=18f4520
         ADDWFC 0x10, F
         
         ; ([0x10:0x11]) /= 2
-        BCF STATUS, C
+        BCF STATUS, 0
         RRCF 0x10, F
         RRCF 0x11, F
 
@@ -94,13 +94,13 @@ List p=18f4520
         RETURN
 
     main:
-        MOVLW 0xFE
+        MOVLW 0x9A
         MOVWF 0x20
-        MOVLW 0x01
+        MOVLW 0xB1
         MOVWF 0x21
-        MOVLW 0x55
+        MOVLW 0xFF
         MOVWF 0x22
-        MOVLW 0x66
+        MOVLW 0xFF
         MOVWF 0x23
         
         RCALL newtonSqrt

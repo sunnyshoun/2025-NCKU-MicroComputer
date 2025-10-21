@@ -1,4 +1,4 @@
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE  1
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -20,49 +20,52 @@ Warning[205]: Found directive in column 1. (List)
                       00003     CONFIG OSC = INTIO67
                       00004     CONFIG WDT = OFF
                       00005     org 0x00
+                      00006     
 Warning[207]: Found label after column 1. (And_Mul)
-                      00006     And_Mul macro xh, xl, yh, yl
-                      00007         MOVLW xh
-                      00008         MOVWF 0x02
-                      00009         MOVLW xl
-                      00010         MOVWF 0x03
-                      00011         MOVLW yh
-                      00012         MOVWF 0x04
-                      00013         MOVLW yl
-                      00014         MOVWF 0x05
-                      00015 
-                      00016         MOVF 0x02, W
-                      00017         ANDWF 0x04, W
-                      00018         MOVWF 0x00
-                      00019 
-                      00020         MOVF 0x03, W
-                      00021         ANDWF 0x05, W
-                      00022         MOVWF 0x01
-                      00023 
-                      00024         MULWF 0x00
-                      00025         MOVFF PRODH, 0x10
-                      00026         MOVFF PRODL, 0x11
-                      00027     endm
-                      00028 
-                      00029     And_Mul 0xAB, 0xCD, 0x56, 0x78
-000000 0EAB               M         MOVLW 0xAB
+                      00007     And_Mul macro xh, xl, yh, yl
+                      00008         MOVLW xh
+                      00009         MOVWF 0x02
+                      00010         MOVLW xl
+                      00011         MOVWF 0x03
+                      00012         MOVLW yh
+                      00013         MOVWF 0x04
+                      00014         MOVLW yl
+                      00015         MOVWF 0x05
+                      00016 
+                      00017         MOVF 0x02, W
+                      00018         ANDWF 0x04, W
+                      00019         MOVWF 0x00
+                      00020 
+                      00021         MOVF 0x03, W
+                      00022         ANDWF 0x05, W
+                      00023         MOVWF 0x01
+                      00024 
+                      00025         MULWF 0x00
+                      00026         MOVFF PRODH, 0x10
+                      00027         MOVFF PRODL, 0x11
+                      00028     endm
+                      00029     
+Warning[207]: Found label after column 1. (main)
+000000                00030     main:
+                      00031         And_Mul 0x50, 0x6F, 0x3A, 0xBC
+000000 0E50               M         MOVLW 0x50
 000002 6E02               M         MOVWF 0x02
-000004 0ECD               M         MOVLW 0xCD
+000004 0E6F               M         MOVLW 0x6F
 000006 6E03               M         MOVWF 0x03
-000008 0E56               M         MOVLW 0x56
+000008 0E3A               M         MOVLW 0x3A
 00000A 6E04               M         MOVWF 0x04
-00000C 0E78               M         MOVLW 0x78
+00000C 0EBC               M         MOVLW 0xBC
 00000E 6E05               M         MOVWF 0x05
                           M 
-000010 5002               M         MOVF 0x02, W
-000012 1404               M         ANDWF 0x04, W
-000014 6E00               M         MOVWF 0x00
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE  2
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+000010 5002               M         MOVF 0x02, W
+000012 1404               M         ANDWF 0x04, W
+000014 6E00               M         MOVWF 0x00
                           M 
 000016 5003               M         MOVF 0x03, W
 000018 1405               M         ANDWF 0x05, W
@@ -71,9 +74,9 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 00001C 0200               M         MULWF 0x00
 00001E CFF4 F010          M         MOVFF PRODH, 0x10
 000022 CFF3 F011          M         MOVFF PRODL, 0x11
-                      00030 
-                      00031     end
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE  3
+                      00032 
+                      00033     end
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE  3
 
 
 SYMBOL TABLE
@@ -132,7 +135,7 @@ BCLIF                             00000003
 BCLIP                             00000003
 BF                                00000000
 BGST                              00000005
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE  4
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE  4
 
 
 SYMBOL TABLE
@@ -191,7 +194,7 @@ CLKI                              00000007
 CLKO                              00000006
 CM0                               00000000
 CM1                               00000001
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE  5
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE  5
 
 
 SYMBOL TABLE
@@ -250,7 +253,7 @@ FLT0                              00000000
 FLTS                              00000002
 FREE                              00000004
 FSR0                              00000000
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE  6
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE  6
 
 
 SYMBOL TABLE
@@ -309,7 +312,7 @@ INT2IP                            00000007
 INT2P                             00000007
 INTCON                            00000FF2
 INTCON2                           00000FF1
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE  7
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE  7
 
 
 SYMBOL TABLE
@@ -368,7 +371,7 @@ LATD3                             00000003
 LATD4                             00000004
 LATD5                             00000005
 LATD6                             00000006
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE  8
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE  8
 
 
 SYMBOL TABLE
@@ -427,7 +430,7 @@ OV                                00000003
 P                                 00000004
 P1A                               00000002
 P1B                               00000005
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE  9
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE  9
 
 
 SYMBOL TABLE
@@ -486,7 +489,7 @@ PREINC2                           00000FDC
 PROD                              00000FF3
 PRODH                             00000FF4
 PRODL                             00000FF3
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE 10
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE 10
 
 
 SYMBOL TABLE
@@ -545,7 +548,7 @@ RCIDL                             00000006
 RCIE                              00000005
 RCIF                              00000005
 RCIP                              00000005
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE 11
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE 11
 
 
 SYMBOL TABLE
@@ -604,7 +607,7 @@ SSPADD                            00000FC8
 SSPBUF                            00000FC9
 SSPCON1                           00000FC6
 SSPCON2                           00000FC5
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE 12
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE 12
 
 
 SYMBOL TABLE
@@ -663,7 +666,7 @@ T3CKPS0                           00000004
 T3CKPS1                           00000005
 T3CON                             00000FB1
 T3SYNC                            00000002
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE 13
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE 13
 
 
 SYMBOL TABLE
@@ -722,7 +725,7 @@ TRISA6                            00000006
 TRISA7                            00000007
 TRISB                             00000F93
 TRISB0                            00000000
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE 14
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE 14
 
 
 SYMBOL TABLE
@@ -781,7 +784,7 @@ VPP                               00000003
 VREFN                             00000002
 VREFP                             00000003
 W                                 00000000
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE 15
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE 15
 
 
 SYMBOL TABLE
@@ -840,7 +843,7 @@ _EBTR2_OFF_7L                     000000FF
 _EBTR2_ON_7L                      000000FB
 _EBTR3_OFF_7L                     000000FF
 _EBTR3_ON_7L                      000000F7
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE 16
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE 16
 
 
 SYMBOL TABLE
@@ -899,7 +902,7 @@ _WDTPS_64_2H                      000000ED
 _WDTPS_8192_2H                    000000FB
 _WDTPS_8_2H                       000000E7
 _WDT_OFF_2H                       000000FE
-MPASM 5.84                         BASIC.ASM   10-8-2025  21:03:22         PAGE 17
+MPASM 5.84                         BASIC.ASM   10-9-2025  11:32:35         PAGE 17
 
 
 SYMBOL TABLE
@@ -925,9 +928,10 @@ _XINST_ON_4L                      000000FF
 __18F4520                         00000001
 __DEBUG                           
 __MPLAB_DEBUGGER_SIMULATOR        1
+main                              00000000
 
 Errors   :     0
-Warnings :     2 reported,     0 suppressed
+Warnings :     3 reported,     0 suppressed
 Messages :     0 reported,     0 suppressed
 
 

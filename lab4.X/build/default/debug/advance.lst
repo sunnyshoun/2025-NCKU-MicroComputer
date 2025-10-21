@@ -1,4 +1,4 @@
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE  1
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -57,7 +57,7 @@ Warning[207]: Found label after column 1. (division_loop)
 Warning[207]: Found label after column 1. (do_subtract)
 000028                00038     do_subtract:
 000028 5003           00039         MOVF 0x03, W
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE  2
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -83,23 +83,23 @@ Warning[207]: Found label after column 1. (next_bit)
 Warning[207]: Found label after column 1. (main)
 000042                00056     main:
                       00057         ; Dividend
-000042 0EFE           00058         MOVLW 0xFE
+000042 0E55           00058         MOVLW 0x55
 000044 6E00           00059         MOVWF 0x00
                       00060 
-000046 0E01           00061         MOVLW 0x01
+000046 0E55           00061         MOVLW 0x55
 000048 6E01           00062         MOVWF 0x01
                       00063 
                       00064         ; Divisor
-00004A 0E02           00065         MOVLW 0x02
+00004A 0E55           00065         MOVLW 0x55
 00004C 6E02           00066         MOVWF 0x02
                       00067 
-00004E 0ECA           00068         MOVLW 0xCA
+00004E 0E55           00068         MOVLW 0x55
 000050 6E03           00069         MOVWF 0x03
                       00070 
 000052 D???           00071         RCALL division
                       00072 
                       00073     end
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE  3
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE  3
 
 
 SYMBOL TABLE
@@ -158,7 +158,7 @@ BCLIP                             00000003
 BF                                00000000
 BGST                              00000005
 BOR                               00000000
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE  4
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE  4
 
 
 SYMBOL TABLE
@@ -217,7 +217,7 @@ CLKO                              00000006
 CM0                               00000000
 CM1                               00000001
 CM2                               00000002
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE  5
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE  5
 
 
 SYMBOL TABLE
@@ -276,7 +276,7 @@ FLTS                              00000002
 FREE                              00000004
 FSR0                              00000000
 FSR0H                             00000FEA
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE  6
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE  6
 
 
 SYMBOL TABLE
@@ -335,7 +335,7 @@ INT2P                             00000007
 INTCON                            00000FF2
 INTCON2                           00000FF1
 INTCON3                           00000FF0
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE  7
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE  7
 
 
 SYMBOL TABLE
@@ -394,7 +394,7 @@ LATD4                             00000004
 LATD5                             00000005
 LATD6                             00000006
 LATD7                             00000007
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE  8
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE  8
 
 
 SYMBOL TABLE
@@ -453,7 +453,7 @@ P                                 00000004
 P1A                               00000002
 P1B                               00000005
 P1C                               00000006
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE  9
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE  9
 
 
 SYMBOL TABLE
@@ -512,7 +512,7 @@ PROD                              00000FF3
 PRODH                             00000FF4
 PRODL                             00000FF3
 PRSEN                             00000007
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE 10
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE 10
 
 
 SYMBOL TABLE
@@ -571,7 +571,7 @@ RCIE                              00000005
 RCIF                              00000005
 RCIP                              00000005
 RCMT                              00000006
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE 11
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE 11
 
 
 SYMBOL TABLE
@@ -630,7 +630,7 @@ SSPBUF                            00000FC9
 SSPCON1                           00000FC6
 SSPCON2                           00000FC5
 SSPEN                             00000005
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE 12
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE 12
 
 
 SYMBOL TABLE
@@ -689,7 +689,7 @@ T3CKPS1                           00000005
 T3CON                             00000FB1
 T3SYNC                            00000002
 TABLAT                            00000FF5
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE 13
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE 13
 
 
 SYMBOL TABLE
@@ -748,7 +748,7 @@ TRISA7                            00000007
 TRISB                             00000F93
 TRISB0                            00000000
 TRISB1                            00000001
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE 14
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE 14
 
 
 SYMBOL TABLE
@@ -807,7 +807,7 @@ VREFN                             00000002
 VREFP                             00000003
 W                                 00000000
 WCOL                              00000007
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE 15
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE 15
 
 
 SYMBOL TABLE
@@ -866,7 +866,7 @@ _EBTR2_ON_7L                      000000FB
 _EBTR3_OFF_7L                     000000FF
 _EBTR3_ON_7L                      000000F7
 _EBTRB_OFF_7H                     000000FF
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE 16
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE 16
 
 
 SYMBOL TABLE
@@ -925,7 +925,7 @@ _WDTPS_8192_2H                    000000FB
 _WDTPS_8_2H                       000000E7
 _WDT_OFF_2H                       000000FE
 _WDT_ON_2H                        000000FF
-MPASM 5.84                       ADVANCE.ASM   10-9-2025  5:15:18         PAGE 17
+MPASM 5.84                       ADVANCE.ASM   10-9-2025  11:33:36         PAGE 17
 
 
 SYMBOL TABLE
